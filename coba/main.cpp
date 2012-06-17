@@ -9,6 +9,8 @@ void init(void)
 {
    glClearColor (0.0, 0.0, 0.0, 0.0);
    glShadeModel (GL_FLAT);
+   glViewport(0,0,640,480);
+   glLoadIdentity();
 }
 
 void display(void)
@@ -38,6 +40,15 @@ void reshape(int w, int h)
    glOrtho(-50.0, 50.0, -50.0, 50.0, -1.0, 1.0);
    glMatrixMode(GL_MODELVIEW);
    glLoadIdentity();
+   
+    glPushMatrix();
+    glScaled(0.8, 1.0, 0.8);
+    glTranslatef(0.0, 0.9, 0.0);
+    glRotated(-90, 1, 0, 0);
+    glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
+    glColor3f(0, 0, 0.6);
+    glutSolidCone(4.5, 2, 8, 1);
+    glPopMatrix();
 }
 
 void mouse(int button, int state, int x, int y) 
@@ -64,7 +75,7 @@ int main(int argc, char** argv)
 {
    glutInit(&argc, argv);
    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB);
-   glutInitWindowSize (250, 250); 
+   glutInitWindowSize (640, 480); 
    glutInitWindowPosition (100, 100);
    glutCreateWindow (argv[0]);
    init ();

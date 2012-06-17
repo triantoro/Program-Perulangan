@@ -34,6 +34,14 @@
         <compilerSet>default</compilerSet>
       </toolsSet>
       <compileType>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>aclui</linkerLibLibItem>
+            <linkerLibLibItem>glu32</linkerLibLibItem>
+            <linkerLibLibItem>glut32</linkerLibLibItem>
+            <linkerLibLibItem>opengl32</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
     </conf>
     <conf name="Release" type="1">
